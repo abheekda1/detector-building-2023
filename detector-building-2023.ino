@@ -149,7 +149,7 @@ void loop(void) {
   double mass = fitToCurve(voltage);
 
   // display the current mass
-  Serial.println("Current mass: " + String(mass, 1));
+  Serial.println("Current mass: " + String(mass, 1) + " (" + voltage + " mV)");
 
   // turn of all LEDs so multiple aren't on at
   // the same time
