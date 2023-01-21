@@ -1,8 +1,8 @@
 # The Parity Public License 7.0.0
 
-Contributor: $name
+Contributor: Abheek Dhawan
 
-Source Code: $address
+Source Code: https://github.com/abheekda1/detector-building-2023
 
 ## Purpose
 
