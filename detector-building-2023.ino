@@ -41,15 +41,15 @@ double ln(double x) {
 // generates the curve using least squares
 // https://mathworld.wolfram.com/LeastSquaresFittingLogarithmic.html
 void genCurve(double x[], double y[], int n) {
-  double sx = 0, sy = 0, sxy = 0, sx2 = 0;
+  double sx = 0, syx = 0, sy = 0, sx2 = 0;
   for (int i = 0; i < n; i++) {
     sx += ln(x[i]);
-    sy += y[i] * ln(x[i]);
-    sxy += y[i];
+    syx += y[i] * ln(x[i]);
+    sy += y[i];
     sx2 += ln(x[i]) * ln(x[i]);
   }
-  b = (n * sy - sx * sxy) / (n * sx2 - sx * sx);
-  a = (sxy - b * sx) / n;
+  b = (n * syx - sx * sy) / (n * sx2 - sx * sx);
+  a = (sy - b * sx) / n;
 }
 
 // maps a voltage value to a mass
