@@ -120,27 +120,29 @@ void setup(void) {
       break;
     }
 
-    bool red;
-    bool green;
-    bool blue;
+    bool red = false;
+    bool green = false;
+    bool blue = false;
 
     for (int j = 0; j < s.length(); j++) {
-      if (s.charAt(i) == 'R') red = true;
-      else if (s.charAt(i) == 'G') green = true;
-      else if (s.charAt(i) == 'B') blue = true;
+      if (s.charAt(j) == 'R') red = true;
+      else if (s.charAt(j) == 'G') green = true;
+      else if (s.charAt(j) == 'B') blue = true;
     }
 
     int lowerBound = 0;
     int upperBound = 1000;
 
-    while (!Serial.available()) {}
     Serial.print("Lower bound: ");
+    while (!Serial.available()) {}
     lowerBound = Serial.readStringUntil('\n').toInt();
     Serial.println(lowerBound);
-    while (!Serial.available()) {}
     Serial.print("Upper bound: ");
+    while (!Serial.available()) {}
     upperBound = Serial.readStringUntil('\n').toInt();
     Serial.println(upperBound);
+
+    Serial.println(String(red) + String(green) + String(blue));
 
     // create a new zone
     zone newZone = {red, green, blue, lowerBound, upperBound};
